@@ -1,0 +1,21 @@
+name: librespot
+repo_root: /mnt/data/lancer1977/code/librespot
+
+languages:
+  - Rust
+  - Shell
+frameworks:
+  - Cargo workspace
+  - Spotify Connect
+
+ci:
+  build:
+    - cargo build --frozen --workspace --examples
+  test:
+    - bash scripts/validate.sh
+
+devstudio:
+  runtime_model: three-agent
+  backlog_ordering: filename
+  skip_promoted_planning: true
+  one_stage_per_run: true

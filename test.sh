@@ -31,4 +31,4 @@ cargo test --workspace
 cargo hack check -p librespot-protocol --each-feature
 cargo hack check -p librespot --each-feature --exclude-all-features --include-features native-tls --exclude-features rustls-tls-native-roots,rustls-tls-webpki-roots
 cargo hack check -p librespot --each-feature --exclude-all-features --include-features rustls-tls-native-roots --exclude-features native-tls,rustls-tls-webpki-roots
-run: cargo build --frozen
+cargo build --frozen

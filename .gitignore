@@ -8,3 +8,10 @@ spotify_appkey.key
 .cache
 *.save
 *.*~
+
+# Build outputs
+bin/
+obj/
+artifacts/
+.devstudio/runtime/
+.build-image/
