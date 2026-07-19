@@ -27,6 +27,10 @@ env:
   RUST_BACKTRACE: 1
   RUSTFLAGS: -D warnings
 
+concurrency:
+  group: librespot-quality-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   fmt:
     name: cargo fmt

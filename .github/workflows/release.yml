@@ -5,6 +5,10 @@ on:
       - created
   workflow_dispatch:
 
+concurrency:
+  group: librespot-publish-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   publish-crates:
     name: Publish librespot

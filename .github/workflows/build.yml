@@ -30,6 +30,10 @@ env:
   RUST_BACKTRACE: 1
   RUSTFLAGS: -D warnings
 
+concurrency:
+  group: librespot-build-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     name: cargo +${{ matrix.toolchain }} test (${{ matrix.os }})
