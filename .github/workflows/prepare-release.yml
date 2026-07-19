@@ -15,7 +15,9 @@ on:
           - patch
 
 concurrency:
-  group: librespot-prepare-release-${{ github.ref }}
+  # Keep each requested bump distinct so a later dispatch cannot replace an
+  # earlier pending preparation in GitHub's single-pending-run slot.
+  group: librespot-prepare-release-${{ github.ref }}-${{ inputs.versionBump || github.run_id }}
   cancel-in-progress: false
 
 jobs:
