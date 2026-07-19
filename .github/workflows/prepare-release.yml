@@ -14,6 +14,10 @@ on:
           - minor
           - patch
 
+concurrency:
+  group: librespot-prepare-release-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   prepare-release:
     name: Prepare release
